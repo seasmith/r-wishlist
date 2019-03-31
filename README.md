@@ -41,15 +41,18 @@ find_rproj <- function(wd = getwd(), it = 1L) {
 }
 ```
 
-* `file_distance(x, y)` = path distance between two file paths
+* `file_setdiff(x, y)` = path distance between two file paths
+    * possible spin-offs
+        * `file_intersect(x, y)` = path in common between two file paths (hmmm)
+        * `file_union(x, y)` = combined distinct file path (hmmm)
 
 ```r
 # Expected behavior
 
-file_distance("some/file/path/here", "some/file")
+file_setdiff("some/file/path/here", "some/file")
 #> [1] "path/here"
 
-file_distance("some/file/path", "another/file/path")
+file_setdiff("some/file/path", "another/file/path")
 #> [1] character(0)
 ```
 
@@ -62,4 +65,4 @@ file_distance("some/file/path", "another/file/path")
     * control depth of recursion (default would be `Inf`)
 * `setdiff(x = "some/file/path/here", y = "some/file")` = allow setdiffing on file paths
     * would help determine path distance between two file paths
-    * would be difficult to implement -- prefer `file_distance()` instead
+    * would be difficult to implement -- prefer `file_setdiff()` instead
