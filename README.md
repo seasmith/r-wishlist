@@ -43,6 +43,8 @@ find_rproj <- function(wd = getwd(), it = 1L) {
 
 ## New Behavior
 
-* `dirname(path, steps = 1)` = how many steps to go back? `steps` should default to `1` (because that is the current behavior) and be limited by new option `max.steps` (default = `15`)
+* `dirname(path, steps = 1)` = how many steps to go back? 
+    * `steps` should default to `1` (because that is the current behavior) and be limited by new option `max.steps` (default = `15`)
 * `list.files(path, recursive, direction = Inf)` = control the depth and direction of recursion
-
+    * allow files to be listed in both recursively forwards and backwards
+    * control depth of recursion (default would be `Inf`)
