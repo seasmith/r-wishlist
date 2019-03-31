@@ -11,7 +11,7 @@ Things I wish base R had
 # Possible implementations
 
 notNA  <- function (x) !is.na(x)
-allNA  <- function (x) all(vapply(x, FUN = function(x) is.na(x), FUN.VALUE = logical(1))
+allNA  <- function (x) all(vapply(x, is.na, logical(1))
 noneNA <- function (x) all(complete.cases(x))
 ```
 
