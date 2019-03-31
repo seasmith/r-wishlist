@@ -41,6 +41,18 @@ find_rproj <- function(wd = getwd(), it = 1L) {
 }
 ```
 
+* `file_distance(x, y)` = path distance between two file paths
+
+```r
+# Expected behavior
+
+file_distance("some/file/path/here", "some/file")
+#> [1] "path/here"
+
+file_distance("some/file/path", "another/file/path")
+#> [1] character(0)
+```
+
 ## New Behavior
 
 * `dirname(path, steps = 1)` = how many steps to go back? 
@@ -48,3 +60,6 @@ find_rproj <- function(wd = getwd(), it = 1L) {
 * `list.files(path, recursive, direction = Inf)` = control the depth and direction of recursion
     * allow files to be listed in both recursively forwards and backwards
     * control depth of recursion (default would be `Inf`)
+* `setdiff(x = "some/file/path/here", y = "some/file")` = allow setdiffing on file paths
+    * would help determine path distance between two file paths
+    * would be difficult to implement -- prefer `file_distance()` instead
