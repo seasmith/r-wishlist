@@ -20,6 +20,10 @@ noneNA <- function (x) all(complete.cases(x))
 ```r
 # Possible implementations
 
+# This function takes no file names as input
+# but it behaves similar to how find_files()
+# would behave.
+# Need to add a stop for the number of iterations.
 find_rproj <- function(wd = getwd(), it = 1L) {
     found <- length(list.files(wd, pattern = "\\.Rproj")) == 1
     if (found) {  # Found it.
