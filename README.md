@@ -12,7 +12,7 @@ Things I wish base R had
 
 notNA  <- function (x) !is.na(x)
 allNA  <- function (x) all(is.na(x) == TRUE)
-noneNA <- function (x) all(complete.cases(x))
+noneNA <- function (x) all(is.na(x) == FALSE)
 ```
 
 * `find_files(files, steps = 1L, path = ".")` = find a vector of file names; would be useful when looking for an `.Rproj` file to call home
