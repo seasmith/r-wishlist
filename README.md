@@ -1,7 +1,15 @@
 # R Wishlist
 Things I wish base R had
 
+## Table of Contents
+* [New Functions](#new-functions)
+  * [Logicals](#logicals)
+  * [Files](#files)
+* [New Behavior](#new-behavior)
+
 ## New Functions
+
+### Logicals
 
 * `notNA()` = compliment to `is.na()`
 * `allNA()` = are all elements `NA`?
@@ -55,6 +63,8 @@ file_setdiff("some/file/path/here", "some/file")
 file_setdiff("some/file/path", "another/file/path")
 #> [1] character(0)
 ```
+
+___
 
 ## New Behavior
 
