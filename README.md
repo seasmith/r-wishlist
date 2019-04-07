@@ -23,6 +23,8 @@ allNA  <- function (x) all(is.na(x) == TRUE)
 noneNA <- function (x) all(is.na(x) == FALSE)
 ```
 
+### Files
+
 * `find_files(files, steps = 1L, path = ".")` = find a vector of file names; would be useful when looking for an `.Rproj` file to call home
 
 ```r
