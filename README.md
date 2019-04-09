@@ -1,5 +1,5 @@
 # R Wishlist
-Things I wish base R had
+Things I wish base R could have
 
 ## Table of Contents
 * [New Functions](#new-functions)
