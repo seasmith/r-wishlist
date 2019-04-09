@@ -29,6 +29,7 @@ noneNA <- function (x) all(is.na(x) == FALSE)
 ```r
 # Possible implementations
 
+none <- function(...) all(... != TRUE)
 allFALSE <- function(...) all(... == FALSE)
 ```
 
