@@ -6,6 +6,8 @@ Things I wish base R could have
   * [Logicals](#logicals)
   * [Files](#files)
 * [New Behavior](#new-behavior)
+* [Argument Order](#argument-order)
+* [Remove](#remove)
 
 ## New Functions
 
@@ -88,3 +90,22 @@ ___
 * `setdiff(x = "some/file/path/here", y = "some/file")` = allow setdiffing on file paths
     * would help determine path distance between two file paths
     * would be difficult to implement -- prefer `file_setdiff()` instead
+
+___
+
+## Argument Order
+
+New argument order of existing functions
+
+* `Filter(x, f)`
+* `Reduce(x, f, init, accumulate = FALSE, right = FALSE)`
+* `grep(x, pattern, ignore.case = FALSE, value = FALSE, fixed = FALSE, invert = FALSE, useBytes = FALSE, perl = FALSE)`
+* `grepl(x, pattern, ignore.case = FALSE, fixed = FALSE, useBytes = FALSE, perl = FALSE)`
+
+___
+
+## Remove
+
+Remove a function from base R
+
+* `as.name()` --OR-- `as.symbol()` = they are the exact same thing (`identical(as.name, as.symbol) # [1] TRUE`); we only need one
