@@ -3,6 +3,7 @@ Things I wish base R could have
 
 ## Table of Contents
 * [New Functions](#new-functions)
+  * [Assignment](#assignment)
   * [Logicals](#logicals)
   * [Files](#files)
 * [New Behavior](#new-behavior)
@@ -10,6 +11,26 @@ Things I wish base R could have
 * [Remove](#remove)
 
 ## New Functions
+
+### Assignment
+
+* `:=` = deconstruction operator
+* `<->` = compound assignment
+
+```r
+# := is a valid but undefined infix operator.
+# This implementation does not use a base R solution!
+
+`:=` <- zeallot::`%<-%`
+
+# I have only heard rumors of _'s validity,
+# but have yet to see this applied.
+# So, there is no way to implement a compound
+# assignment operator with _.
+
+# I chose <-> becuase I currently like it
+# but thought mentioning _ was good.
+```
 
 ### Logicals
 
