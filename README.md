@@ -4,6 +4,7 @@ Things I wish base R could have
 ## Table of Contents
 * [New Functions](#new-functions)
   * [Assignment](#assignment)
+  * [Numbers](#numbers)
   * [Logicals](#logicals)
   * [Files](#files)
 * [New Behavior](#new-behavior)
@@ -34,7 +35,7 @@ Things I wish base R could have
 
 ### Numbers
 
-* `rep_each()` = the `each` argument in `rep()` is not obvious from the docs; we already have `rep_len()`
+* `rep_each()` = the `each` argument in `rep()` is not obvious from the docs; we already have `rep_len()`; see also  `rep()` in [new behavior](#new-behavior)
 
 ```r
 # Possible implementations
@@ -113,6 +114,7 @@ ___
 
 ## New Behavior
 
+* `rep(x, ..., sort = FALSE)` = sort the repitions; who can remember `each`?
 * `dirname(path, steps = 1)` = how many steps to go back? 
     * `steps` should default to `1` (because that is the current behavior) and be limited by new option `max.steps` (default = `15`)
 * `list.files(path, recursive, direction = Inf)` = control the depth and direction of recursion
