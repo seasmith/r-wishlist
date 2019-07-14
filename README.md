@@ -32,6 +32,16 @@ Things I wish base R could have
 # but thought mentioning _ was good.
 ```
 
+### Numbers
+
+* `rep_each()` = the `each` argument in `rep()` is not obvious from the docs; we already have `rep_len()`
+
+```r
+# Possible implementations
+
+rep_each <- function (x, each) rep(x, each = each)
+```
+
 ### Logicals
 
 * `notNA()` = compliment to `is.na()`
