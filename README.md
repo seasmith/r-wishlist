@@ -74,6 +74,51 @@ none <- function(...) all(... != TRUE)
 allFALSE <- function(...) all(... == FALSE)
 ```
 
+### Lists
+
+* `list_collapse(x, index)` -- collapse a list's components by an index vector
+
+```r
+# Possible implementations
+
+l <- rep(list(1:3, 4:5), 2)
+
+# -- Using split + lapply -- #
+list_collapse <- function (x, index) {
+    lapply(split(x, index), function (j) Reduce(append, j))
+}
+
+collapse_index1 <- rep(1:2, times = 2)
+collapse_index2 <- rep(1:2, each = 2)
+
+list_collapse(l, collapse_index1)
+list_collapse(l, collapse_index2)
+
+# -- Using tapply -- #
+
+list_collapse2 <- function (x, index) tapply(x, index, function (j) Reduce(append, j))
+
+list_collapse2(l, collapse_index1)
+list_collapse2(l, collapse_index2)
+
+# -- Inner function -- #
+# The function function (j) Reduce(append, j) 
+# is the real workhorse. Can test against using
+# c in place of append. Also test list_collapse
+# against list_collapse2.
+# 
+# However, I have discovered that these are 
+# merely curious re-discoveries of unlist().
+
+list_collapse3 <- function (x, index) tapply(x, index, unlist)
+
+list_collapse3(l, collapse_index1)
+list_collapse3(l, collapse_index2)
+
+# Alternatively, could allow conditional input
+# rather than an index vector.
+```
+
 ### Files
 
 * `find_files(files, steps = 1L, path = ".")` = find a vector of file names; would be useful when looking for an `.Rproj` file to call home
