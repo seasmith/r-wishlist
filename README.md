@@ -66,12 +66,14 @@ noneNA <- function (x) all(is.na(x) == FALSE)
 
 * `none()` = compliment to `all()`
 * `allFALSE()` = opposite of `all()`
+* `nor()` = neither are `TRUE`; binary case of `!all()`/`none()`
 
 ```r
 # Possible implementations
 
 none <- function(...) all(... != TRUE)
 allFALSE <- function(...) all(... == FALSE)
+nor <- function (x, y) all(x != TRUE, y != TRUE)
 ```
 
 ### Lists
