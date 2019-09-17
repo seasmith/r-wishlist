@@ -6,6 +6,7 @@ Things I wish base R could have
   * [Assignment](#assignment)
   * [Numbers](#numbers)
   * [Logicals](#logicals)
+  * [Dates And Time](#dates-and-time)
   * [Files](#files)
 * [New Behavior](#new-behavior)
 * [Argument Order](#argument-order)
@@ -74,6 +75,20 @@ noneNA <- function (x) all(is.na(x) == FALSE)
 none <- function(...) all(... != TRUE)
 allFALSE <- function(...) all(... == FALSE)
 nor <- function (x, y) all(x != TRUE, y != TRUE)
+```
+
+### Dates And Time
+
+* `is.POSIXct()` = datetime equivalent to `is.Date()`
+* `is.POSIXlt()` = ...
+* `is.POSIXt()` = ...
+
+```r
+# Possible implementations
+
+is.POSIXct <- function (x) inherits(x, "POSIXct")
+is.POSIXlt <- function (x) inherits(x, "POSIXlt")
+is.POSIXt <- function (x) inherits(x, "POSIXt")
 ```
 
 ### Lists
