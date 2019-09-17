@@ -199,10 +199,14 @@ ___
 
 New argument order of existing functions
 
+1. `x` should ALWAYS come first
 * `Filter(x, f)`
 * `Reduce(x, f, init, accumulate = FALSE, right = FALSE)`
+
+2. `pattern` should follow `x`; `ignore.case` and `fixed` are more relevant than `perl`; also, see # 1
 * `grep(x, pattern, ignore.case = FALSE, value = FALSE, fixed = FALSE, invert = FALSE, useBytes = FALSE, perl = FALSE)`
 * `grepl(x, pattern, ignore.case = FALSE, fixed = FALSE, useBytes = FALSE, perl = FALSE)`
+* `gsub(x, pattern, replacement, ignore.case = FALSE, fixed = FALSE, useBytes = FALSE, perl = FALSE)
 
 ___
 
