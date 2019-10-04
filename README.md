@@ -8,6 +8,7 @@ Things I wish base R could have
   * [Logicals](#logicals)
   * [Dates And Time](#dates-and-time)
   * [Files](#files)
+  * [Environments](#environments)
 * [New Behavior](#new-behavior)
 * [Argument Order](#argument-order)
 * [Remove](#remove)
@@ -177,6 +178,24 @@ file_setdiff("some/file/path/here", "some/file")
 
 file_setdiff("some/file/path", "another/file/path")
 #> [1] character(0)
+```
+
+### Environments
+
+* `lock()` = lock object in current environment (taken from [here](https://colinfay.me/js-const-r/))
+
+```r
+lock <- function(x){
+  lockBinding(
+    deparse(
+      substitute(x)), 
+    env = parent.frame()
+  )
+}
+
+plop <- 12
+lock(plop)
+plop <- 13
 ```
 
 ___
