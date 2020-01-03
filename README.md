@@ -43,6 +43,15 @@ Things I wish base R could have
 # Possible implementations
 
 rep_each <- function (x, each) rep(x, each = each)
+
+# Faster, from: https://twitter.com/BrodieGaslam/status/1206765767775203328
+rep_each <- function(x, each) {
+  if(each) {
+    res <- matrix(x, nrow=each, ncol=length(x), byrow=TRUE)
+    dim(res) <- NULL
+    res
+  } else x[0]
+}
 ```
 
 * `na_rm()` = remove NA placeholders in a vector; `na.omit()` returns a new class and attribute that is undesired in some context (i.e. printing).
