@@ -54,12 +54,12 @@ rep_each <- function(x, each) {
 }
 ```
 
-* `na_rm()` = remove NA placeholders in a vector; `na.omit()` returns a new class and attribute that is undesired in some context (i.e. printing).
+* `rm_na()` = remove NA placeholders in a vector; `na.omit()` returns a new class and attribute that is undesired in some context (i.e. printing).
 
 ```r
 # Possible implementation
 
-na_rm <- function(x) c(na.omit(object = x))
+rm_na <- function(x) c(na.omit(object = x))
 ```
 ### Logicals
 
