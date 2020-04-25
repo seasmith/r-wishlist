@@ -61,6 +61,29 @@ rep_each <- function(x, each) {
 
 rm_na <- function(x) c(na.omit(object = x))
 ```
+
+* `index()` -- index or normalize a vector
+
+```r
+index <- function (x, method = "min-max") 
+{
+    x <- switch(method,
+      `min-max` = {
+        min_x <- min(x, na.rm = TRUE)
+        max_x <- max(x, na.rm = TRUE)
+        vapply(X = x,
+               FUN = function(i) (i - min_x)/(max_x - min_x),
+               FUN.VALUE = numeric(1))},
+      start = {
+        first_x <- x[1]  # assume first is start
+        vapply(X = x,
+               FUN = function(i) (i - first_x)/first_x, 
+               FUN.VALUE = numeric(1))
+      })
+    x
+}
+```
+
 ### Logicals
 
 * `notNA()` = compliment to `is.na()`
