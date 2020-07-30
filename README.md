@@ -4,6 +4,7 @@ Things I wish base R could have
 ## Table of Contents
 * [New Functions](#new-functions)
   * [Assignment](#assignment)
+  * [Vectors](#vectors)
   * [Numbers](#numbers)
   * [Logicals](#logicals)
   * [Dates And Time](#dates-and-time)
@@ -33,6 +34,21 @@ Things I wish base R could have
 
 # I chose <-> becuase I currently like it
 # but thought mentioning _ was good.
+```
+
+### Vectors
+
+These functions apply to (just about) any vector.
+
+* `n_duplicated()` = the number of duplicated elements (elements which are duplicates of some other element)
+
+```r
+n_duplicated <- function (x, na.rm = FALSE, incomparables = FALSE, ...) {
+    
+    x <- if (na.rm) c(na.omit(x)) else x
+    sum(duplicated(x, incomparables = incomparables, ...))
+    
+}
 ```
 
 ### Numbers
@@ -82,6 +98,22 @@ index <- function (x, method = "min-max")
       })
     x
 }
+```
+
+* `cumpct()` -- cumulative percent (ascending - from smallest to largest)
+
+```r
+cumpct <- function (x) {
+  i <- order(x)
+  j <- order(i)
+  xi <- x[i]
+  res <- cumsum(xi) / sum(xi)
+  res[j]
+}
+
+d <- c(25, 10, 50, 15)
+cumpct(d)
+# [1] 0.50 0.10 1.00 0.25
 ```
 
 ### Logicals
