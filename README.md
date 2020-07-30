@@ -19,6 +19,7 @@ Things I wish base R could have
 ### Assignment
 
 * `:=` = deconstruction operator
+* `{var} <- obj` = alternative deconstruction syntax
 * `<->` = compound assignment
 
 ```r
