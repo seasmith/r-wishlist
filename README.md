@@ -20,6 +20,20 @@ Things I wish base R could have
 
 * `:=` = deconstruction operator
 * `{var} <- obj` = alternative deconstruction syntax
+  - Should probably include global option `deconstruction.overload` with values `"recycle"`, `"start"`, and `"end"` to determine how unequal number of `rhs`/`lhs` elements should be treated.
+  
+```r
+{a} <- c(1)
+{a, b} <- c(1, 2)
+
+# default recycle
+{a, b, x} <- c(1, 2, 3, 4, 5)
+print(a)
+# [1] 1 4
+print(b)
+# [1] 2 5
+```
+
 * `<->` = compound assignment
 
 ```r
