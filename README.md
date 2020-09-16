@@ -93,7 +93,7 @@ rep_each <- function(x, each) {
 rm_na <- function(x) c(na.omit(object = x))
 ```
 
-* `index()` -- index or normalize a vector
+* `index()` -- index or normalize a vector (either to the min and max, or to the start
 
 ```r
 index <- function (x, method = "min-max") 
@@ -129,6 +129,17 @@ cumpct <- function (x) {
 d <- c(25, 10, 50, 15)
 cumpct(d)
 # [1] 0.50 0.10 1.00 0.25
+```
+
+* `nmax()`/`nmin()` -- min/max with offset; can take first max, second max, etc
+
+```r
+x <- c(2, 4, 3, 5)
+
+nmax(x) # default 0 offset
+# [1] 5
+nmax(x, offset = 1)
+# [2] 4
 ```
 
 ### Logicals
