@@ -292,6 +292,8 @@ ___
 
 ## New Behavior
 
+* `json.lock`/`.Gemfile` for package version control (when needed).
+* An R launcher similar to Python's Windows launcher.
 * `rep(x, ..., sort = FALSE)` = sort the repitions; who can remember `each`?
 * `dirname(path, steps = 1)` = how many steps to go back? 
     * `steps` should default to `1` (because that is the current behavior) and be limited by new option `max.steps` (default = `15`)
